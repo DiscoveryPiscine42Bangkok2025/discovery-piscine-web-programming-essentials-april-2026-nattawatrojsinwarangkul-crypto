@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 02 - It's over 9000</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #f9f9f9;
+            text-align: center;
+        }
+        .calculator {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            display: inline-block;
+        }
+        input[type="text"] {
+            width: 120px;
+            padding: 10px;
+            font-size: 18px;
+            text-align: center;
+            border: 2px solid #333;
+            border-radius: 8px;
+        }
+        select {
+            padding: 10px;
+            font-size: 18px;
+            border: 2px solid #333;
+            border-radius: 8px;
+        }
+        input[type="submit"] {
+            margin-top: 20px;
+            padding: 12px 30px;
+            font-size: 18px;
+            background: #ff4444;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background: #cc0000;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="calculator">
+        <h1>🧮 Simple Calculator</h1>
+        
+        <form id="calcForm">
+            <input type="text" id="left" placeholder="Left" required>
+            
+            <select id="operator">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+                <option value="%">%</option>
+            </select>
+            
+            <input type="text" id="right" placeholder="Right" required>
+            
+            <br>
+            <input type="submit" value="Try me!">
+        </form>
+    </div>
+
+    <script>
+        // Every 30 seconds: "Please, use me..."
+        setInterval(() => {
+            alert("Please, use me...");
+        }, 30000);
+
+        document.getElementById("calcForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const leftStr = document.getElementById("left").value.trim();
+            const rightStr = document.getElementById("right").value.trim();
+            const operator = document.getElementById("operator").value;
+
+            // Check if both inputs are valid non-negative integers
+            const left = parseInt(leftStr, 10);
+            const right = parseInt(rightStr, 10);
+
+            if (isNaN(left) || isNaN(right) || left < 0 || right < 0) {
+                alert("Error :(");
+                console.log("Error :(");
+                return;
+            }
+
+            let result;
+
+            switch (operator) {
+                case "+":
+                    result = left + right;
+                    break;
+                case "-":
+                    result = left - right;
+                    break;
+                case "*":
+                    result = left * right;
+                    break;
+                case "/":
+                    if (right === 0) {
+                        alert("It's over 9000!");
+                        console.log("It's over 9000!");
+                        return;
+                    }
+                    result = left / right;
+                    break;
+                case "%":
+                    if (right === 0) {
+                        alert("It's over 9000!");
+                        console.log("It's over 9000!");
+                        return;
+                    }
+                    result = left % right;
+                    break;
+            }
+
+            // Show result in alert and console
+            alert(result);
+            console.log(result);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+/* background.css - clean styling for the random background changer */
+
+/* Reset default margin/padding to make background full viewport */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling: full height, centered button, smooth transition for background */
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    background-color: #f0f0f0;   /* initial background (neutral grey) */
+    transition: background-color 0.2s ease;
+    margin: 0;
+    padding: 1rem;
+}
+
+/* Button styling: modern, clean, with hover effect */
+.bg-changer-btn {
+    background-color: #1e2a3e;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 3rem;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.15s, background-color 0.2s, box-shadow 0.2s;
+    letter-spacing: 0.5px;
+}
+
+/* Hover effect: slightly lift and darken */
+.bg-changer-btn:hover {
+    background-color: #0f1720;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Active (click) effect: subtle scale down */
+.bg-changer-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Focus ring for accessibility */
+.bg-changer-btn:focus-visible {
+    outline: 3px solid #005fcc;
+    outline-offset: 3px;
+}
+
+/* Responsive: slightly smaller button on narrow screens */
+@media (max-width: 480px) {
+    .bg-changer-btn {
+        font-size: 1.2rem;
+        padding: 0.6rem 1.5rem;
+    }
+}
