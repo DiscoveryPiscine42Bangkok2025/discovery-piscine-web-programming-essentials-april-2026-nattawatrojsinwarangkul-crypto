@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basics</title>
+    <style>
+        body {
+            background-color: #FFC0CB; /* The chosen Pink */
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            font-size: 3em;
+            margin-bottom: 40px;
+        }
+
+        .shop-container {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-bottom: 30px;
+        }
+
+        .shop-item {
+            text-align: center;
+        }
+
+        .shop-item img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .shop-item a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            background: rgba(255, 255, 255, 0.5);
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: #333;
+            width: 100%;
+            margin: 40px 0;
+        }
+
+        .footer {
+            text-align: right;
+            font-style: italic;
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>The Digital Bazaar & More!</h1>
+
+    <div class="shop-container">
+        <div class="shop-item">
+            <img src="https://images.unsplash.com/photo-1472851294608-062f824d296e?auto=format&fit=crop&w=300&h=200" alt="Shop 1">
+            <br>
+            <a href="https://www.amazon.com" target="_blank">Visit Amazon</a>
+        </div>
+
+        <div class="shop-item">
+            <img src="https://images.unsplash.com/photo-1528698827591-e19ccd7bc23d?auto=format&fit=crop&w=300&h=200" alt="Shop 2">
+            <br>
+            <a href="https://www.ebay.com" target="_blank">Visit eBay</a>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="footer">
+        &copy; Nattawat
+    </div>
+
+</body>
+</html>
