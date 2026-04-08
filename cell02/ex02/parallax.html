@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Exercise</title>
+    <style>
+        /* This is the CSS inside the HTML so it can't fail to load */
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: "Arial", sans-serif;
+        }
+
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh; /* Set to 100% of the viewport height */
+            width: 100%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Direct links to the player images */
+        .img-1 {
+            background-image: url("https://img.uefa.com/imgml/TP/players/2014/2025/cutoff/50327424.webp");
+        }
+
+        .img-2 {
+            background-image: url("https://img.uefa.com/imgml/TP/players/2014/2025/cutoff/250127111.webp");
+        }
+
+        .caption-text {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 20px;
+            font-size: 24px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            border: 2px solid #fff;
+        }
+
+        .content-block {
+            background-color: #000;
+            color: #fff;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        h3 {
+            margin: 0;
+            font-size: 30px;
+            letter-spacing: 3px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="parallax img-1">
+        <div class="caption-text">MATTHIJS DE LIGT</div>
+    </div>
+
+    <div class="content-block">
+        <h3>Defensive Wall</h3>
+        <p>A powerhouse in the backline, known for his strength and leadership.</p>
+    </div>
+
+    <div class="parallax img-2">
+        <div class="caption-text">BENJAMIN ŠEŠKO</div>
+    </div>
+
+    <div class="content-block">
+        <h3>The Rising Star</h3>
+        <p>The future of the attack revealed at the bottom.</p>
+    </div>
+
+</body>
+</html>

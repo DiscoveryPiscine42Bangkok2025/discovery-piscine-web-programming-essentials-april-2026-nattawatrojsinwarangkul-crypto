@@ -1,0 +1,54 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: "Arial", sans-serif;
+}
+
+.parallax {
+    /* The magic happens here */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    /* Full screen height */
+    height: 100%; 
+}
+
+/* Direct Image Links */
+.img-1 {
+    background-image: url("https://img.uefa.com/imgml/TP/players/2014/2025/cutoff/50327424.webp");
+}
+
+.img-2 {
+    background-image: url("https://img.uefa.com/imgml/TP/players/2014/2025/cutoff/250127111.webp");
+}
+
+/* Caption Styling */
+.caption {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+}
+
+.caption .border {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    font-size: 24px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+}
+
+/* Black Block Styling */
+.content-block {
+    background-color: #000;
+    color: #fff;
+    padding: 100px 50px;
+    text-align: center;
+}
+
+.content-block h3 {
+    letter-spacing: 5px;
+}

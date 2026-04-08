@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Card | 42 Project</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #000000;   /* pure black background */
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+    }
+
+    .card-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* WHITE CARD */
+    .profile-card {
+      max-width: 440px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 2rem;
+      box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.5);
+      padding: 2rem 1.8rem 2.2rem;
+      transition: transform 0.2s ease;
+    }
+
+    .profile-card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Title */
+    .card-title {
+      font-size: 1.7rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #111;
+      border-bottom: 2px solid #eee;
+      display: inline-block;
+      width: 100%;
+      padding-bottom: 0.5rem;
+    }
+
+    /* Invisible table */
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: transparent;
+    }
+
+    .table-cell {
+      background: transparent;
+      border: none;
+      padding: 0;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    /* Profile picture – inline SVG (works everywhere) */
+    .avatar {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .avatar-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #eef2ff;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      background: #f0f2f5;
+    }
+
+    /* Login name */
+    .login-name {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin: 0.25rem 0;
+    }
+
+    /* Description */
+    .description-text {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #1e293b;
+      background: #f1f5f9;
+      display: inline-block;
+      padding: 0.4rem 1.2rem;
+      border-radius: 40px;
+      margin: 0.5rem 0;
+    }
+
+    /* Location */
+    .location {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #2563eb;
+      background: #eef2ff;
+      display: inline-block;
+      padding: 0.3rem 1.2rem;
+      border-radius: 40px;
+      margin: 0.3rem 0;
+    }
+
+    /* Social networks – small images (real PNG icons from CDN) */
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 1rem 0 0.5rem;
+    }
+
+    .social-icon {
+      display: inline-block;
+      transition: transform 0.2s;
+    }
+
+    .social-icon img {
+      width: 32px;
+      height: 32px;
+      filter: brightness(0) invert(0); /* dark icons for white card */
+      transition: filter 0.2s, transform 0.2s;
+    }
+
+    .social-icon:hover img {
+      filter: brightness(0) saturate(100%) invert(35%) sepia(98%) saturate(1800%) hue-rotate(200deg);
+      transform: scale(1.1);
+    }
+
+    /* Contact button */
+    .contact-button {
+      background: #000000;
+      color: white;
+      border: none;
+      font-size: 1.1rem;
+      font-weight: 600;
+      padding: 0.8rem 1.8rem;
+      border-radius: 60px;
+      cursor: pointer;
+      width: 80%;
+      max-width: 200px;
+      margin-top: 1rem;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+
+    .contact-button:hover {
+      background: #1e293b;
+      transform: scale(1.02);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .contact-button:active {
+      transform: scale(0.98);
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .profile-card {
+        padding: 1.5rem;
+      }
+      .card-title {
+        font-size: 1.4rem;
+      }
+      .login-name {
+        font-size: 1.7rem;
+      }
+      .avatar-img {
+        width: 90px;
+        height: 90px;
+      }
+      .social-icon img {
+        width: 28px;
+        height: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="card-container">
+  <div class="profile-card">
+    <!-- Title on top -->
+    <h1 class="card-title"># User Profile Card</h1>
+
+    <!-- Invisible table for alignment -->
+    <table class="info-table" cellspacing="0" cellpadding="0" role="presentation">
+      <tbody>
+      <tr><td class="table-cell picture-cell">
+        <div class="avatar">
+          <img class="avatar-img" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%233b82f6'/%3E%3Ctext x='50' y='67' font-size='50' text-anchor='middle' fill='white' font-weight='bold'%3EW42%3C/text%3E%3C/svg%3E"
+               alt="Profile picture">
+        </div>
+      </td></tr>
+      <tr><td class="table-cell login-cell">
+        <div class="login-name">Wil 42</div>
+      </td></tr>
+      <tr><td class="table-cell description-cell">
+        <div class="description-text">Level 25, The answer</div>
+      </td></tr>
+      <tr><td class="table-cell location-cell">
+        <div class="location">42Paris</div>
+      </td></tr>
+      <tr><td class="table-cell social-cell">
+        <div class="social-links">
+          <a href="#" class="social-icon" target="_blank" rel="noopener noreferrer">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/twitter.svg" alt="Twitter">
+          </a>
+          <a href="#" class="social-icon" target="_blank" rel="noopener noreferrer">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub">
+          </a>
+          <a href="#" class="social-icon" target="_blank" rel="noopener noreferrer">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="LinkedIn">
+          </a>
+          <a href="#" class="social-icon" target="_blank" rel="noopener noreferrer">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/discord.svg" alt="Discord">
+          </a>
+        </div>
+      </td></tr>
+      <tr><td class="table-cell button-cell">
+        <button class="contact-button">Contact</button>
+      </td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<script>
+  document.querySelector('.contact-button')?.addEventListener('click', () => {
+    alert("📬 Contact Wil 42\nwil.42@42paris.fr");
+  });
+</script>
+</body>
+</html>

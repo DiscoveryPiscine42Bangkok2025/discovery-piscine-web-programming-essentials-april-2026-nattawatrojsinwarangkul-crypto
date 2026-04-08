@@ -1,0 +1,74 @@
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 50px;
+}
+
+/* 1. Reset and Layout */
+.menu-container {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-item {
+    position: relative; /* Needed so the dropdown aligns to this */
+    display: inline-block;
+}
+
+/* 2. Style the main "Label" */
+.menu-label {
+    background-color: #0088ce; /* SNCF Blue */
+    color: white;
+    padding: 15px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    display: block;
+}
+
+/* 3. Style the Dropdown (The Sandwich Filling) */
+.dropdown {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 100%; /* Places it exactly below the label */
+    left: 0;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    border-radius: 0 0 4px 4px;
+    
+    /* THE TRICK: Hide it by default */
+    display: none; 
+    z-index: 100;
+}
+
+/* 4. Dropdown Link Styling */
+.dropdown li a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid #eee;
+}
+
+/* 5. INTERACTION LOGIC (The "No JS" Secret) */
+
+/* When the user hovers over the .menu-item, show the .dropdown */
+.menu-item:hover .dropdown {
+    display: block;
+}
+
+/* Hover effects for visual feedback */
+.menu-label:hover {
+    background-color: #005a87;
+}
+
+.dropdown li a:hover {
+    background-color: #f1f1f1;
+    color: #0088ce;
+}
